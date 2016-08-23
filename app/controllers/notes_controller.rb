@@ -12,7 +12,7 @@ class NotesController < ApplicationController
     @note = current_user.notes.build
   end
 
-  def creates
+  def create
     @note = current_user.notes.build(note_params)
 
     if @note.save
