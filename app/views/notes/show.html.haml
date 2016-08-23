@@ -1,7 +1,7 @@
 .wrapper_with_padding
   #note_show
     %h1.title=@note.title
-    %p=simple_format(@note.content)
+    %p= markdown @note.content
 
     .buttons
       =link_to "Edte",edit_note_path(@note),class: "button"
