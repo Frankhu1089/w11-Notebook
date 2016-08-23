@@ -42,10 +42,10 @@ class NotesController < ApplicationController
   private
 
   def find_note
-    @note = Note.find(params[:id])
+    @note = Note.friendly.find(params[:id])
   end
 
   def note_params
-    params.require(:note).permit(:title, :content)
+    params.require(:note).permit(:title, :content, :slug)
   end
 end
