@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :notes
 
+  authenticated :user do
+    root "notes#index", as: "authenticated_root"
+  end
+
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
